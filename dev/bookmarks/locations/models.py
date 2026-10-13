@@ -17,7 +17,7 @@ class Comment(Model):
     time = DateTimeField(auto_now_add=True, null=False, blank=True)
     text = TextField()
 
-    def __Str__(self):
+    def __str__(self):
         return self.text
 
     def link_str(self):
