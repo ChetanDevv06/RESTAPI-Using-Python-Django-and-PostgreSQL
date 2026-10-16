@@ -7,7 +7,15 @@ from django.http import HttpResponse
 
 class SimpleHelloWorld(View):
     """
-    view that returns Hello World
+    View that returns Hello World
     """
     def get(self, requests, *args, **kwargs):
         return HttpResponse('<h1>Hello World</h1>')
+
+
+class SimpleHelloPerson(View):
+    """
+    View that returns Hello $person parameter
+    """
+    def get(self,request, *args, **kwargs):
+        return HttpResponse('<h1>Hello {} </h1>'.format(kwargs['name']))
